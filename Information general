@@ -2,32 +2,32 @@
 
 Environnement:
 - Meilleur condition d'élevage;
--> Label: energie (BEBC),
+-> Label: énergie (BEBC),
 -> Label: sanitaire (????).
 
-Economique:
-- Moin de charge;
--> Moin de besoin d'un veterinaire,
--> Durais de vie d'une poules plus élevé,
--> Ressource renouvellable.
+Économique:
+- Moins de charges;
+-> Moins besoin d'un véterinaire, 
+-> Durée de vie d'une poule plus élevée, 
+-> Ressources renouvelables.
 
 Social:
-- Consomation responssable (client)
+- Consommation responsable (client)
 
 #-- CDC --#
 
 Cout SIN max: 200€
 
 1.2.3:
-- Protocol d'éssaie -> mesure.
-- Schéma électrique, hydrolique -> programme
+- Protocole d'essai -> mesure.
+- Schéma électrique, hydraulique -> programme
 - Chaine d'énergie chaine d'information
 
 1.3.1:
-- Gestion de l'aération et de la ventilation;
+- Gestion;
 -> Aération,
 -> Ventilation,
--> Eclairage.
+-> Éclairage.
 - Affichage des mesures (Tableau de bord).
 - Alerte sur le téléphone du client.
 

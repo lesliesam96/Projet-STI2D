@@ -2,22 +2,25 @@
 
 Environnement:
 - Meilleur condition d'élevage;
--> Label: énergie (BEBC),(50 kwh/m²/an soit 45 000kwh/an)
--> Label: sanitaire (????).
+-> Label: énergie (BEBC: 50 kwh/m²/an soit 45 000kwh/an),
+-> Label: sanitaire (???).
 
 Économique:
 - Moins de charges;
 -> Moins besoin d'un véterinaire, 
 -> Durée de vie d'une poule plus élevée, 
 -> Ressources renouvelables.
+- Plus de gain grace au label.
 
 Social:
 - Consommation responsable (client)
 - bruit des poules
+- Gain de temps pour le producteur.
 
 #-- CDC --#
 
 Cout SIN max: 200€
+cout EE max: 500€
 
 1.2.3:
 - Protocole d'essai -> mesure.
@@ -27,7 +30,7 @@ Cout SIN max: 200€
 1.3.1:
 - Gestion;
 -> Aération,
--> Ventilation, (16 trappes)
+-> Ventilation (16 trappes),
 -> Éclairage.
 - Affichage des mesures (Tableau de bord).
 - Alerte sur le téléphone du client.

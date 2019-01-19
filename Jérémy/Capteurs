@@ -1,1 +1,11 @@
 Capteur Humidité + Température : https://boutique.semageek.com/fr/416-dht22-capteur-de-temperature-et-humidite-digital.html
+
+Comparaison DHT22 vs DHT11
+
+Humidité : 0~100% - 20~80%
+Prec.Humidité : +/-2% - +/-5%
+Température : -40~+150C - 0~+50C
+Prec.Température : +/-0.5C - +/-2C
+Fréquence : 2Hz - 1Hz
+Tension : 3~5V - 3~5V
+Stabilité dans le temps : +/-0.5%/an - +/-1%/an

@@ -7,7 +7,7 @@ Besoin:
 -> taux; 0 -> 3000ppm / +- 100ppm
 
 Capteur CO2:
-MQ-5:
+MQ-5: Selectionné
 --> https://www.robotshop.com/eu/fr/capteur-gaz-mq-5.html
 --> https://www.robotshop.com/media/files/pdf/MQ-5-Gas-Sensor-UserManual.pdf
 --> https://www.robotshop.com/media/files/pdf/MQ-5-datasheet.pdf
@@ -16,3 +16,7 @@ MQ-2:
 --> https://www.robotshop.com/eu/fr/capteur-gaz-mq-2.html
 --> https://www.robotshop.com/media/files/pdf/MQ-2-Gas-Sensor-UserManual.pdf
 --> https://www.robotshop.com/media/files/pdf/MQ-2-datasheet.pdf
+
+Aquerire: Capteur CO2
+Traité: Raspberry
+Resistué: Ecran LCD

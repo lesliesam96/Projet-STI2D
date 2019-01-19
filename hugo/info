@@ -1,6 +1,18 @@
 Programme:
-Lib C++ w/ arduino : ASIO
+Lib C++ w/ raspberry : GPIO 
+http://www.hertaville.com/introduction-to-accessing-the-raspberry-pis-gpio-in-c.html
 
 Besoin:
 - Capteur CO2;
 -> taux; 0 -> 3000ppm / +- 100ppm
+
+Capteur CO2:
+MQ-5:
+--> https://www.robotshop.com/eu/fr/capteur-gaz-mq-5.html
+--> https://www.robotshop.com/media/files/pdf/MQ-5-Gas-Sensor-UserManual.pdf
+--> https://www.robotshop.com/media/files/pdf/MQ-5-datasheet.pdf
+
+MQ-2:
+--> https://www.robotshop.com/eu/fr/capteur-gaz-mq-2.html
+--> https://www.robotshop.com/media/files/pdf/MQ-2-Gas-Sensor-UserManual.pdf
+--> https://www.robotshop.com/media/files/pdf/MQ-2-datasheet.pdf

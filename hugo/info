@@ -7,16 +7,19 @@ Besoin:
 -> taux; 0 -> 3000ppm / +- 100ppm
 
 Capteur CO2:
-MQ-5: Selectionné
---> https://www.robotshop.com/eu/fr/capteur-gaz-mq-5.html
---> https://www.robotshop.com/media/files/pdf/MQ-5-Gas-Sensor-UserManual.pdf
---> https://www.robotshop.com/media/files/pdf/MQ-5-datasheet.pdf
+--> https://www.robotshop.com/eu/fr/capteur-co2-compatible-arduino.html
+350ppm -> 10kppm
 
-MQ-2:
+MQ-2: Selectionné
 --> https://www.robotshop.com/eu/fr/capteur-gaz-mq-2.html
 --> https://www.robotshop.com/media/files/pdf/MQ-2-Gas-Sensor-UserManual.pdf
 --> https://www.robotshop.com/media/files/pdf/MQ-2-datasheet.pdf
+200ppm -> 5kppm
+
+MCP3008:
+--> https://www.amazon.fr/10BIT-2-7V-16DIP-MCP3008-I-MICROCHIP/dp/B01185WVK2/ref=pd_cp_23_3/258-4224806-0378203?_encoding=UTF8&pd_rd_i=B01185WVK2&pd_rd_r=625b0029-1c16-11e9-bb21-ab21ac58d050&pd_rd_w=vQpNX&pd_rd_wg=JS8Ap&pf_rd_p=767bee29-b3dc-4737-bd35-530d818921d9&pf_rd_r=A0V9KCY8X5YS3NGX9YH2&psc=1&refRID=A0V9KCY8X5YS3NGX9YH2
 
 Aquerire: Capteur CO2
+Conditionné: CAN
 Traité: Raspberry
 Resistué: Ecran LCD

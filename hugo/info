@@ -8,12 +8,10 @@ Besoin:
 
 Capteur CO2:
 --> https://www.robotshop.com/eu/fr/capteur-co2-compatible-arduino.html
-350ppm -> 10kppm
+350ppm -> 10kppm +-400ppm
 
-MQ-2: Selectionné
---> https://www.robotshop.com/eu/fr/capteur-gaz-mq-2.html
---> https://www.robotshop.com/media/files/pdf/MQ-2-Gas-Sensor-UserManual.pdf
---> https://www.robotshop.com/media/files/pdf/MQ-2-datasheet.pdf
+MQ-135:
+https://www.robotshop.com/eu/fr/capteur-gaz-mq-135.html?gclid=Cj0KCQiAp7DiBRDdARIsABIMfoCScUP4XmxhaaYufA3OBeGrD6ych90vZEBQYai8owJfAgV0EhPYtYYaAl6vEALw_wcB
 200ppm -> 5kppm
 
 MCP3008:

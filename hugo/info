@@ -11,8 +11,16 @@ Capteur CO2:
 400ppm -> 10kppm +-50ppm
 
 MQ-135:
-https://www.robotshop.com/eu/fr/capteur-gaz-mq-135.html?gclid=Cj0KCQiAp7DiBRDdARIsABIMfoCScUP4XmxhaaYufA3OBeGrD6ych90vZEBQYai8owJfAgV0EhPYtYYaAl6vEALw_wcB
+--> https://www.robotshop.com/eu/fr/capteur-gaz-mq-135.html?gclid=Cj0KCQiAp7DiBRDdARIsABIMfoCScUP4XmxhaaYufA3OBeGrD6ych90vZEBQYai8owJfAgV0EhPYtYYaAl6vEALw_wcB
 valeur indeterminé donc inutilisable
+
+Grove 101020512: Selectionné
+--> https://www.gotronic.fr/art-capteur-de-gaz-grove-101020512-28427.htm
+400 -> 60 000ppm 
+- 400/1479 ppm +-1ppm
+- 1479/5144 ppm +-3ppm
+- 5144/17597 ppm +-9ppm
+- 17597/60000 ppm +-31ppm
 
 MCP3008:
 --> https://www.amazon.fr/10BIT-2-7V-16DIP-MCP3008-I-MICROCHIP/dp/B01185WVK2/ref=pd_cp_23_3/258-4224806-0378203?_encoding=UTF8&pd_rd_i=B01185WVK2&pd_rd_r=625b0029-1c16-11e9-bb21-ab21ac58d050&pd_rd_w=vQpNX&pd_rd_wg=JS8Ap&pf_rd_p=767bee29-b3dc-4737-bd35-530d818921d9&pf_rd_r=A0V9KCY8X5YS3NGX9YH2&psc=1&refRID=A0V9KCY8X5YS3NGX9YH2

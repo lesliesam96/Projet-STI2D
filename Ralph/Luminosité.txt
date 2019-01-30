@@ -1,5 +1,5 @@
-Capteurs comparés: Capteur de luminosité et Photorésistance
-Capteur choisi: Capteur de luminosité
+Capteurs comparÃ©s: Capteur de luminositÃ© TSL2561 et PhotorÃ©sistance LDR09
+Capteur choisi: Capteur de luminositÃ© TSL2561
 Micro controlleur: Raspberry Pi 3
 Code du capteur: 
 

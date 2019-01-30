@@ -23,5 +23,5 @@ SPG30: Selectionné
 - 17597/60000 ppm +-31ppm
 
 Aquerire: Capteur CO2
-Traité: Raspberry
+Traité: Arduino
 Resistué: Ecran LCD

@@ -1,7 +1,3 @@
-Programme:
-Lib C++ w/ raspberry : GPIO 
-http://www.hertaville.com/introduction-to-accessing-the-raspberry-pis-gpio-in-c.html
-
 Besoin:
 - Capteur CO2;
 -> taux; 0 -> 3000ppm / +- 100ppm

@@ -1,3 +1,4 @@
 Raison du changement de Raspberry a Arduino:
-- Facilité le dévellopement (2bus I2C),
-- Facilité d'utilisation (plug and play: Ethernet, microSD, TFT LCD).
++ Facilité le dévellopement (gestion de 2bus I2C sur 1pin avec Raspberry),
++ Facilité d'utilisation (plug and play: Ethernet, microSD, TFT LCD),
+- Liberté de language.

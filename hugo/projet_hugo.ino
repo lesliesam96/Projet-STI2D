@@ -1,47 +1,52 @@
-#define PAR A8
-#define VOL 52
+int percentage;
+float volts;
+    
+#define MG_PIN (A8)
+#define DC_GAIN (8.5)
+#define READ_SAMPLE_INTERVAL (50)
+#define READ_SAMPLE_TIMES (5)
+#define ZERO_POINT_VOLTAGE (2.4/6.9)
+#define REACTION_VOLTGAE (0.033)
 
-float tens;
-int ppm;
-float CO2Curve[3] = {2.602, 0.22, (0.03/(2.602-3))};
+float CO2Curve[3] = {2.602, ZERO_POINT_VOLTAGE, (REACTION_VOLTGAE/(2.602-3))};
 
 void setup() {
-  Serial.begin(9600);
-  Serial.println("Démarage du systeme...");
-  digitalWrite(VOL, HIGH);
+   Serial.begin(9600);
+   Serial.print("MG-811 Demostration\n");                
 }
 
 void loop() {
-  tens = TRead(PAR);
-  Serial.print("Tension: ");
-  Serial.print(tens);
-  Serial.println(" mV");
-  ppm = getPPM(tens, CO2Curve);
-  Serial.print("CO2: ");
-  if (ppm == -1) {
-    Serial.print( "<400" );
-  } else {
-    Serial.print(ppm);
-  }
-  Serial.println(" PPM");
+    volts = MGRead(MG_PIN);
+    Serial.print("Tension:");
+    Serial.print(volts); 
+    Serial.println("V");
+
+    percentage = MGGetPercentage(volts, CO2Curve);
+    Serial.print("CO2:");
+    if (percentage == -1) {
+        Serial.print(" <400 ");
+    } else {
+        Serial.print(percentage);
+    }
+    Serial.print("ppm");
+    delay(500);
 }
 
-float TRead(int pin) {
-  float tens_ = 0;
-  for (int i=0; i<49; i++) {
-    tens_+=analogRead(pin);
-    delay(10);
-  }
-  tens_ = (tens_/50)*5/1024;
-  return tens_;
+float MGRead(int mg_pin) {
+    int i;
+    float v=0;
+    for (i=0;i<READ_SAMPLE_TIMES;i++) {
+        v += analogRead(mg_pin);
+        delay(READ_SAMPLE_INTERVAL);
+    }
+    v = (v/READ_SAMPLE_TIMES) *5/1024 ;
+    return v;  
 }
 
-int getPPM(float tens, float* pcurve) {
-  if (tens/8.5 >= 0.22) {
-    return -1;
-  } else {
-    return pow(10, ((tens/8.5)-pcurve[1])/pcurve[2]+pcurve[0]);
-  }
-  
+int  MGGetPercentage(float volts, float *pcurve) {
+   if ((volts/DC_GAIN ) >= ZERO_POINT_VOLTAGE) {
+      return -1;
+   } else { 
+      return pow(10, ((volts/DC_GAIN)-pcurve[1])/pcurve[2]+pcurve[0]);
+   }
 }
-

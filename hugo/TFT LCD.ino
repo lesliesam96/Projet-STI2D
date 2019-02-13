@@ -13,35 +13,27 @@ Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 // marge des cercles: 5
 // Rayon du cercle = (170-5*2)/2 = 80
 
-namespace com {
-  void init() {
-    tft.setRotation(-1);
-    tft.fillScreen(0x5AA6);
-    tft.setTextColor(ILI9341_WHITE); tft.setTextSize(2);
-    tft.setCursor(20,10);
-    tft.print("Humidite:");
-    tft.setCursor(170,10);
-    tft.print("Temperature:");
-  }
-}
+cercleAff test(100, 100, 50, 300);
 
-class cercle {
-  public:
-   cercle(int x, int y, uint16_t rayon);
-   ~cercle();
-  private:
-   int x, y;
-   uint16_t rayon, color;
-}
-
+// Main programme
 void setup() {
+  Serial.begin(9600);
   tft.begin();
   uint8_t x = tft.readcommand8(ILI9341_RDMODE);
   Serial.println(x, HEX);
-  com::init();
+  tft.setRotation(-1);
+  tft.fillScreen(0x5AA6);
+  tft.setTextColor(ILI9341_WHITE); tft.setTextSize(2);
+  tft.setCursor(20,10);
+  tft.print("Humidite:");
+  tft.setCursor(170,10);
+  tft.print("Temperature:");
 }
 
 void loop() {
+  // utilise une image pour affiche les informations;
+  delay(60000);
 }
+
 
 

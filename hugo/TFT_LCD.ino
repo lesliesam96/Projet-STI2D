@@ -9,6 +9,12 @@
 #define TFT_CS 10
 #define SD_CS   4
 
+#define TEMPX 5
+#define TEMPY 80
+
+#define HUMIX 170
+#define HUMIY 80
+
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 Adafruit_ImageReader reader;
 
@@ -18,6 +24,14 @@ Adafruit_ImageReader reader;
 // reste pour le texte: 240-170=70
 // marge des cercles: 5
 // Rayon du cercle = (170-5*2)/2 = 80
+
+int mesure(float& temp, float& humi);
+void affPrint(const float& temp, const float& humi);
+void affTier(const float& temp, const float& humi);
+void drawTemp(const short& nb);
+void drawHumi(const short& nb);
+
+float CO_d, humi, temp;
 
 // Main programme
 void setup() {
@@ -32,26 +46,99 @@ void setup() {
   Serial.println(x, HEX);
   tft.setRotation(-1);
   tft.fillScreen(ILI9341_BLACK);
-  tft.setTextColor(ILI9341_WHITE); tft.setTextSize(2);
-  tft.setCursor(20,10);
-  tft.print("Humidite:");
-  tft.setCursor(170,10);
-  tft.print("Temperature:");
-  ImageReturnCode stat;
-  stat = reader.drawBMP("/purple.bmp", tft, 0, 0);
+  tft.setTextColor(ILI9341_WHITE); 
+
 }
 
 void loop() {
-  /*
+  tft.setTextSize(2);
+  tft.setCursor(20,10);
+  tft.print("Humidite:");
+  tft.setCursor(170,10);  
+  tft.print("Temperature:");
   Adafruit_ImageReader reader;
   ImageReturnCode stat;
-  Adafruit_Image img;
-  int16_t pos = 10;
-  stat = reader.drawBMP("ez.bmp", NULL, pos, pos, false);
-  */
+  stat = reader.drawBMP("/cercle.bmp", tft, TEMPX, TEMPY, false);
+  stat = reader.drawBMP("/cercle.bmp", tft, HUMIX, HUMIY, false);
+  
+  CO_d = mesure(temp, humi);
+  affPrint(temp, humi);
+  affTier(temp, humi);
   // utilise une image pour affiche les informations;
   delay(60000);
 }
+
+int mesure(float& temp, float& humi) {
+  // recuper le code de jerem
+  // pour les variables:
+  // temp = #Température
+  // humi = #Humidité
+
+  // Mesurer le taux de CO2 (ppm)
+  // dans le int de return
+  return 0;
+}
+
+void affPrint(const float& temp, const float& humi) {
+  Serial.print("Température: ");
+  Serial.print(temp);
+  Serial.print("°C,     Humidité: ");
+  Serial.print(humi);
+  Serial.println("%");
+  Serial.println("--------------------");
+  Serial.println("Wait: 1min");
+  Serial.println("--------------------");
+}
+
+void affTier(const float& temp, const float& humi) {
+  if (temp >= 20.0) {
+    drawTemp(3); 
+  } else if (temp >= 15) {
+    drawTemp(2);
+  } else if (temp >= 10) {
+    drawTemp(1);
+  }
+  // draw Temp txt
+  if (humi >= 65.0) {
+    drawHumi(3);
+  } else if (humi >= 50.0) {
+    drawHumi(2);
+  } else if (humi >= 35.0) {
+    drawHumi(1); 
+  }
+  // draw Humi txt
+}
+
+void drawTemp(const short& nb) {
+  Adafruit_ImageReader reader;
+  ImageReturnCode stat;
+  if (nb == 1) {
+    stat = reader.drawBMP("/vert.bmp", tft, TEMPX, TEMPY, false);
+  }
+  if (nb == 2) {
+    stat = reader.drawBMP("/jaune.bmp", tft, TEMPX, TEMPY, false);
+  } 
+  if (nb == 3) {
+    stat = reader.drawBMP("/rouge.bmp", tft, TEMPX, TEMPY, false);
+  }
+}
+
+void drawHumi(const short& nb) {
+Adafruit_ImageReader reader;
+  ImageReturnCode stat;
+  if (nb == 1) {
+    stat = reader.drawBMP("/vert.bmp", tft, HUMIX, HUMIY, false);
+  }
+  if (nb == 2) {
+    stat = reader.drawBMP("/jaune.bmp", tft, HUMIX, HUMIY, false);
+  } 
+  if (nb == 3) {
+    stat = reader.drawBMP("/rouge.bmp", tft, HUMIX, HUMIY, false);
+  }
+}
+
+
+
 
 
 

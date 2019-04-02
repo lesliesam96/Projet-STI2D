@@ -31,7 +31,9 @@ void affTier(const float& temp, const float& humi);
 void drawTemp(const short& nb);
 void drawHumi(const short& nb);
 
-float CO_d, humi, temp;
+float CO_d = 0;
+float humi = 0;
+float temp = 0;
 
 // Main programme
 void setup() {
@@ -51,6 +53,8 @@ void setup() {
 }
 
 void loop() {
+  CO_d = mesure(temp, humi);
+  
   tft.setTextSize(2);
   tft.setCursor(20,10);
   tft.print("Humidite:");
@@ -60,8 +64,7 @@ void loop() {
   ImageReturnCode stat;
   stat = reader.drawBMP("/cercle.bmp", tft, TEMPX, TEMPY, false);
   stat = reader.drawBMP("/cercle.bmp", tft, HUMIX, HUMIY, false);
-  
-  CO_d = mesure(temp, humi);
+
   affPrint(temp, humi);
   affTier(temp, humi);
   // utilise une image pour affiche les informations;
@@ -91,6 +94,10 @@ void affPrint(const float& temp, const float& humi) {
 }
 
 void affTier(const float& temp, const float& humi) {
+  tft.setCursor(44,80);
+  tft.print(temp);
+  tft.setCursor(209,80);
+  tft.print(humi);
   if (temp >= 20.0) {
     drawTemp(3); 
   } else if (temp >= 15) {
@@ -98,7 +105,6 @@ void affTier(const float& temp, const float& humi) {
   } else if (temp >= 10) {
     drawTemp(1);
   }
-  // draw Temp txt
   if (humi >= 65.0) {
     drawHumi(3);
   } else if (humi >= 50.0) {
@@ -106,7 +112,7 @@ void affTier(const float& temp, const float& humi) {
   } else if (humi >= 35.0) {
     drawHumi(1); 
   }
-  // draw Humi txt
+  
 }
 
 void drawTemp(const short& nb) {
@@ -114,30 +120,34 @@ void drawTemp(const short& nb) {
   ImageReturnCode stat;
   if (nb == 1) {
     stat = reader.drawBMP("/vert.bmp", tft, TEMPX, TEMPY, false);
+    Serial.println("Draw: green temperatur");
   }
   if (nb == 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, TEMPX, TEMPY, false);
+    Serial.println("Draw: yellow temperatur");
   } 
   if (nb == 3) {
     stat = reader.drawBMP("/rouge.bmp", tft, TEMPX, TEMPY, false);
+    Serial.println("Draw: red temperatur");
   }
 }
 
 void drawHumi(const short& nb) {
-Adafruit_ImageReader reader;
+  Adafruit_ImageReader reader;
   ImageReturnCode stat;
   if (nb == 1) {
     stat = reader.drawBMP("/vert.bmp", tft, HUMIX, HUMIY, false);
+    Serial.println("Draw: green humidity");
   }
   if (nb == 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, HUMIX, HUMIY, false);
+    Serial.println("Draw: yellow humidity");
   } 
   if (nb == 3) {
     stat = reader.drawBMP("/rouge.bmp", tft, HUMIX, HUMIY, false);
+    Serial.println("Draw: red humidity");
   }
 }
-
-
 
 
 

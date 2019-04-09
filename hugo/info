@@ -26,3 +26,12 @@ Affichage:
 2.8" TFT Touch Shield (adafruit)
 -> Taux d'humidité,
 -> Temperature.
+
+ACV:
+
+Élement:     25g de Composant électronique actif (moyenne)
+Transport:   10T 8018km (FR-CH) Fret aérien intercontinental
+Consomation: Electricité photovoltaïque
+P = U * I        E = P * 3600
+  = 5 * 0.005      = 0.025 * 3600
+  = 0.025          = 90 Wh         <=> 0.09kWh

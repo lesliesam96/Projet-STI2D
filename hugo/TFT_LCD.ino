@@ -54,7 +54,6 @@ void setup() {
 
 void loop() {
   CO_d = mesure(temp, humi);
-  
   tft.setTextSize(2);
   tft.setCursor(20,10);
   tft.print("Humidite:");
@@ -64,10 +63,8 @@ void loop() {
   ImageReturnCode stat;
   stat = reader.drawBMP("/cercle.bmp", tft, TEMPX, TEMPY, false);
   stat = reader.drawBMP("/cercle.bmp", tft, HUMIX, HUMIY, false);
-
   affPrint(temp, humi);
   affTier(temp, humi);
-  // utilise une image pour affiche les informations;
   delay(60000);
 }
 

@@ -115,11 +115,11 @@ void affTier(const float& temp, const float& humi) {
 void drawTemp(const short& nb) {
   Adafruit_ImageReader reader;
   ImageReturnCode stat;
-  if (nb == 1) {
+  if (nb >= 1) {
     stat = reader.drawBMP("/vert.bmp", tft, TEMPX, TEMPY, false);
     Serial.println("Draw: green temperatur");
   }
-  if (nb == 2) {
+  if (nb >= 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, TEMPX, TEMPY, false);
     Serial.println("Draw: yellow temperatur");
   } 
@@ -132,11 +132,11 @@ void drawTemp(const short& nb) {
 void drawHumi(const short& nb) {
   Adafruit_ImageReader reader;
   ImageReturnCode stat;
-  if (nb == 1) {
+  if (nb >= 1) {
     stat = reader.drawBMP("/vert.bmp", tft, HUMIX, HUMIY, false);
     Serial.println("Draw: green humidity");
   }
-  if (nb == 2) {
+  if (nb >= 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, HUMIX, HUMIY, false);
     Serial.println("Draw: yellow humidity");
   } 

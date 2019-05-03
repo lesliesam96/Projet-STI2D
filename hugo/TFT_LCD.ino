@@ -109,7 +109,6 @@ void affTier(const float& temp, const float& humi) {
   } else if (humi >= 35.0) {
     drawHumi(1); 
   }
-  
 }
 
 void drawTemp(const short& nb) {
@@ -117,15 +116,12 @@ void drawTemp(const short& nb) {
   ImageReturnCode stat;
   if (nb >= 1) {
     stat = reader.drawBMP("/vert.bmp", tft, TEMPX, TEMPY, false);
-    Serial.println("Draw: green temperatur");
   }
   if (nb >= 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, TEMPX, TEMPY, false);
-    Serial.println("Draw: yellow temperatur");
   } 
   if (nb == 3) {
     stat = reader.drawBMP("/rouge.bmp", tft, TEMPX, TEMPY, false);
-    Serial.println("Draw: red temperatur");
   }
 }
 
@@ -134,15 +130,12 @@ void drawHumi(const short& nb) {
   ImageReturnCode stat;
   if (nb >= 1) {
     stat = reader.drawBMP("/vert.bmp", tft, HUMIX, HUMIY, false);
-    Serial.println("Draw: green humidity");
   }
   if (nb >= 2) {
     stat = reader.drawBMP("/jaune.bmp", tft, HUMIX, HUMIY, false);
-    Serial.println("Draw: yellow humidity");
   } 
   if (nb == 3) {
     stat = reader.drawBMP("/rouge.bmp", tft, HUMIX, HUMIY, false);
-    Serial.println("Draw: red humidity");
   }
 }
 
